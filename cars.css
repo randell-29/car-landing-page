@@ -39,7 +39,7 @@ body video {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 100%;
+  opacity: 50%;
 }
 
 header {
@@ -126,25 +126,30 @@ footer .button {
 }
 
 .car-carousel .car-posters div img{
-    height: var(--active-height);
-    width: var(--active-width);
-    opacity: 100%;
+    height: var(--inactive-height);
+    width: var(--inactive-width);
+    opacity: 50%;
     margin: 0 10px 0 10px;
 }
 
-.inactive {
-    height: var(--inactive-height) !important;
-    width: var(--inactive-width) !important;
-    opacity: 50% !important;
+.active {
+    height: var(--active-height) !important;
+    width: var(--active-width) !important;
+    opacity: 100% !important;
     margin: 0 10px 0 10px;
 }
 
-footer .next-button {
+footer .next-button-holder {
     margin-right: 20px;
 }
 
-footer .prev-button {
+footer .prev-button-holder {
     margin-left: 20px;
+}
+
+footer i {
+    cursor: pointer;
+    transition: 0.2;
 }
 
 .button i {
