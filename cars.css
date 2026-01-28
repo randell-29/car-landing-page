@@ -79,9 +79,9 @@ header .logo {
 main {
     grid-area: main;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: 1fr;
-    grid-template-areas: "car-specs-1" "car-specs-2";
+    grid-template-areas: "car-specs-1" "sources" "car-specs-2";
 
     margin: 0 80px 0 80px;
     font-family: "Alumni Sans Pinstripe", sans-serif;
@@ -110,6 +110,10 @@ main #car-specs-1 article h2, h3{
 
 #car-specs-1 article h2 {
     border-bottom: 1px solid #fff;
+}
+
+main .sources {
+    place-items: center;
 }
 
 main #car-specs-2 {
