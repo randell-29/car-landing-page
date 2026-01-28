@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --active-height: 140px;
+    --active-width: 250px;
+    --inactive-width: calc(var(--active-width) * .8);
+    --inactive-height: calc(var(--active-height) * .8);
+    --blue: #152238;
+    --bugati: #c5120b
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    background-color: #000;
+    font-family: "Holtwood One SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    margin: 0;
+}
+
+body video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 100%;
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "car-model" "logo";
+    margin: 20px 40px 0 40px;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 12px;
+
+    color: #fff;
+    font-size: 48px;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow:
+    -100px -100px 0 var(--blue),
+     10px -10px 0 var(--blue),
+     0 0 0 #000,
+     0 0 0 #000;
+}
+
+header .logo {
+    width: 100px;
+    margin-left: 40px;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "top-main" "bottom-main";
+}
+
+.top-main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "carousel" "car-specs-1";
+    place-items: center;
+    gap: 20px;
+}
+
+.carousel {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "prev-button" "car-carousel" "next-button";
+    place-items: center;
+}
+
+
+
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "watch" "socials";
+    place-items: center;
+    padding-bottom: 20px;
+}
+
+footer .button {
+    height: 70%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-carousel .car-posters {
+    display: flex;
+}
+
+.car-carousel .car-posters div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-carousel .car-posters div img{
+    height: var(--active-height);
+    width: var(--active-width);
+    opacity: 100%;
+    margin: 0 10px 0 10px;
+}
+
+.inactive {
+    height: var(--inactive-height) !important;
+    width: var(--inactive-width) !important;
+    opacity: 50% !important;
+    margin: 0 10px 0 10px;
+}
+
+footer .next-button {
+    margin-right: 20px;
+}
+
+footer .prev-button {
+    margin-left: 20px;
+}
+
+.button i {
+    color: #000;
+}
