@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap');
 
 * {
     box-sizing: border-box;
@@ -10,8 +11,7 @@
     --active-width: 250px;
     --inactive-width: calc(var(--active-width) * .8);
     --inactive-height: calc(var(--active-height) * .8);
-    --blue: #152238;
-    --bugati: #c5120b
+    --theme: #e6cc00;
 }
 
 body {
@@ -59,31 +59,79 @@ header h1 {
     font-style: italic;
     letter-spacing: 2px;
     text-shadow:
-    -100px -100px 0 var(--blue),
-     10px -10px 0 var(--blue),
-     0 0 0 #000,
-     0 0 0 #000;
+    -100px -100px 0 var(--theme),
+     10px -10px 0 var(--theme),
+     0 0 0 var(--theme),
+     0 0 0 var(--theme);
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
 }
 
 header .logo {
-    width: 100px;
+    width: 80px;
     margin-left: 40px;
 }
 
 main {
     grid-area: main;
     display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-areas: "top-main" "bottom-main";
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "car-specs-1" "car-specs-2";
+
+    margin: 0 80px 0 80px;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
 }
 
-.top-main {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr;
-    grid-template-areas: "carousel" "car-specs-1";
-    place-items: center;
-    gap: 20px;
+main h3 {
+    font-size: 24px;
+}
+
+main #car-specs-1 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+main #car-specs-1 article{
+    margin: 20px 0 20px 0;
+}
+
+main #car-specs-1 article h2, h3{
+    margin: 0;
+}
+
+#car-specs-1 article h2 {
+    border-bottom: 1px solid #fff;
+}
+
+main #car-specs-2 {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+main #car-specs-2 article h2, h3{
+    margin: 0;
+}
+
+#car-specs-2 article h2 {
+    border-bottom: 1px solid #fff;
+}
+
+#car-specs-2 article h3 {
+    text-align: end;
+}
+
+main #car-specs-2 article{
+    margin: 20px 0 20px 0;
 }
 
 .carousel {
@@ -130,6 +178,7 @@ footer .button {
     width: var(--inactive-width);
     opacity: 50%;
     margin: 0 10px 0 10px;
+    transition:0.2s ease;
 }
 
 .active {
@@ -137,6 +186,16 @@ footer .button {
     width: var(--active-width) !important;
     opacity: 100% !important;
     margin: 0 10px 0 10px;
+}
+
+footer .button {
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+footer .button:hover {
+    background-color: var(--theme);
 }
 
 footer .next-button-holder {
